@@ -8,7 +8,7 @@
 				header("Location: unlog.php"); exit;
 			}
 			else{
-				echo '<h2> Общий магазин!Нахуй изменения!</h2><br/>';
+				echo '<h2> Общий магазин!ЕБана рот!</h2><br/>';
 				print "Привет, ".$userdata['username'].". Всё работает!";
 				
 				if ($userdata['verification'] == 0){
