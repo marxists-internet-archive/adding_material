@@ -108,6 +108,7 @@
 			foreach($err AS $error){
 				print $error."<br>";
 			}
+			echo "</br><a href=\"reg.php\"> На страницу регистрации!</a>";
 		}
     		
 	}
