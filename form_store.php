@@ -34,7 +34,7 @@ if ($action == 'getserver')
 }
 ?>
 <form action="add_chat.php" method="post">
-	 <input type="hidden" name="user_id" value=" <?php echo $userdata['id'];  ?> " >
+	 <input type="hidden" name="username" value=" <?php echo $userdata['username'];  ?> " >
     <select name="game" onchange="loadserver(this)">
         <option></option>
             

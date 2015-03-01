@@ -23,9 +23,7 @@ while (time()-$time<$limit) {
     if (mysql_num_rows($res)) {
         while ($item=mysql_fetch_array($res)) {
             // пишем js-скрипт, который выполнится у клиента
-			$res = mysql_query('SELECT `username` FROM `users` WHERE `id`="'.$item['user_id'].'"');
-            $it = mysql_fetch_array($res);
-			echo 'self.putMessage("'.$item['id'].'","'.$it['username'].'","'.escape($item['game']).'","'.escape($item['server']).'","'.escape($item['amount']).'");';
+			echo 'self.putMessage("'.$item['id'].'","'.$item['username'].'","'.escape($item['game']).'","'.escape($item['server']).'","'.escape($item['amount']).'");';
         }
         // выбрасываем все данные и выходим, чтобы клиент смог их обработать
         flush();

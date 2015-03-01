@@ -7,7 +7,7 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		
 		<script type="text/javascript" >
- function loadserver(select){
+function loadserver(select){
     var serverSelect = $('select[name="server"]');
     serverSelect.attr('disabled', 'disabled'); // делаем список городов не активным
 
@@ -25,7 +25,6 @@
                 
     });
 }
-
 		
 function soundClick() {
 	var audio = new Audio(); //  новый элемент Audio
@@ -46,18 +45,19 @@ function Messanger() {
     this.last = 0;
     this.timeout = 360;
     this.comet = 0;
-	id_store = getCookie('id_store');
+	
     var self = this;
     this.putMessage = function(id,name,game,server,num) {
-		//alert("putMessage"+id+name+game);
-		if ( id <= id_store) {}
+		//alert("putMessage"+id+name+game+server+num);
+		id_store = getCookie('id_store');
+		if ( id <= id_store) {
+			
+		}
 		else{
 			soundClick();
 			var date = new Date( new Date().getTime() + 2*3600*1000 );
-			document.cookie="name=value; path=/; expires="+date.toUTCString();
-
-			document.cookie = "id_store="+id+"expires=";
-        }
+			document.cookie = "id_store="+id+"; expires="+date.toUTCString();
+		}
 		// callback, добавляет сообщения на страницу, вызывается из полученных с сервера данных
         self.last = id;
         var b = document.createElement('div');
@@ -104,9 +104,6 @@ $(document).ready(function(){
 //alert('start');
     // инициализация
     var msg = new Messanger();
-	
-
-
 });
 </script>
 		
