@@ -11,9 +11,10 @@ define ("REG", 1);
 		 <script>
    function agreeForm(f) {
     // Если поставлен флажок, снимаем блокирование кнопки
-    if (f.agree.checked)  f.store.disabled = 0  
+    if (f.flag_store.checked)  f.store.disabled = 0; 
     // В противном случае вновь блокируем кнопку
-    else {f.store.disabled = 1; f.store.value = "";};
+    else {f.store.disabled = 1; 
+	f.store.value = "";}
    }
   </script>
 	</head>
@@ -27,13 +28,13 @@ define ("REG", 1);
 			<input type="password" name="password" required placeholder="Password"></br>
 			<input type="password" name="r_password" required placeholder="Repeat password"></br> 
 			<input type = "email" name="mail" required placeholder="Email"></br>
-			<input type="checkbox" name="flag_store" onclick="agreeForm(this.form)">  Я представляю магазин.</br>
+			<input id = "f_store" type="checkbox" name="flag_store" onclick="agreeForm(this.form); document.getElementById('f_store').value='accepted';">  Я представляю магазин.</br>
 			<input type = "text" name="store" required placeholder="Site of store" disabled></br>
 			<input type = "number" name="wmid" required placeholder="WMID"></br>
 			<input type = "text" name="skype" required placeholder="Skype nickname"></br>
 			<input type = "text" name="icq" required placeholder="ICQ UID"></br>
 			<a href="rule.php"> Правила</a> сервиса.</br>
-			<input type="checkbox" onClick="document.getElementById('rule').value='accepted';" name="rule"> С правилами ознакомился и согласен!</br>
+			<input id="rule" type="checkbox" onClick="document.getElementById('rule').value='accepted';" name="rule"> С правилами ознакомился и согласен!</br>
 			<input name="submit" type="submit" value="Зарегистрироваться">
 		</form>
 		

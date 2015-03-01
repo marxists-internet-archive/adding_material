@@ -1,6 +1,6 @@
 AddDefaultCharset utf-8
 RewriteEngine on
-RewriteBase /faculty/gamestore/
+RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
