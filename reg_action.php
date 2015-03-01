@@ -51,16 +51,27 @@
 		if ($_POST['rule']!='accepted'){
 			$err[] = "Если вы не согласны с правилами, мы не можем вас зарегистрировать!";
 		}
+		if ($_POST['flag_store'] == 'accepted'){
+			if(strlen($_POST['store'])== 0 )
+				$err[] = "Следует ввести сайт или название магазина"; 
+			else if (strlen($_POST['store'])<3)
+					$err[] = "Какой-то подозрительный магазин!";
+		}
 
 		if(count($err) == 0){
 			$password = md5($_POST['password']);
 			$wmid =  mysqli_real_escape_string($con,htmlspecialchars($_POST['wmid']));
 			$skype =  mysqli_real_escape_string($con,htmlspecialchars($_POST['skype']));
 			$icq =  mysqli_real_escape_string($con,htmlspecialchars($_POST['icq']));
+			if ($_POST['flag_store'] == 'accepted')
+				$f_store = 1;
+			else
+				$f_store = 0;
+			$store = mysqli_real_escape_string($con,htmlspecialchars($_POST['store']));
 			$ver = generateCode();
 			$key = md5($ver.md5($login.$mail));
 			$link = "http://pm-pu.ru/gamestore/verif.php?ver=".$ver."&key=".$key;
-			mysqli_query($con,"INSERT INTO `users` SET `username`='".$login. "', `password`='".$password. "', `email`='".$mail. "', `wmid`='".$wmid. "', `skype`='".$skype. "', `icq_uin`='".$icq.  "', `hash`='".$ver. "'");
+			mysqli_query($con,"INSERT INTO `users` SET `username`='".$login. "', `password`='".$password. "', `email`='".$mail. "', `store`='".$store. "', `f_store`='".$f_store. "', `wmid`='".$wmid. "', `skype`='".$skype. "', `icq_uin`='".$icq.  "', `hash`='".$ver. "'");
 			//header("Location: index1.php");exit();
 			
 			//Готовим письмо
