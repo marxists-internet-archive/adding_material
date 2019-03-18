@@ -1,0 +1,98 @@
+﻿
+html, body {
+  width: 100%;
+  font-family: 'Arial';
+  font-size: 11pt;
+  color: #666;
+}
+
+.entered-text{
+  font-family:'Open Sans';
+  font-size: 11pt;   
+}
+
+.text_size_big{
+  font-size: 1.2em;
+}
+
+.text_size_small{
+  font-size: .8em;
+}
+
+
+
+.text_bold{
+  font-weight: bold;
+}
+
+.input{
+  display: block;
+  height: 35px;
+  width: 360px;
+  border-radius: 3px;
+  padding: 8px;  
+  border: 1px solid #666;
+}
+
+.textarea{
+  display: block;
+  height: 120px;
+  width: 360px;
+  border-radius: 3px;
+  padding: 8px; 
+  border: 1px solid #666;  
+}
+
+.button{
+  display: inline-block;
+  height: 45px;
+  width: 180px;
+  background-color: #fff;
+  border: 2px solid #23527c;
+  color: #23527c;
+}
+
+.user-form{
+  display: block;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.user-form__description-wrap{
+  margin: 15px 10px 0 25px;
+}
+
+.user-form__meta-information-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.user-form__input{
+  margin: 15px 10px 15px 25px; 
+}
+
+.user-form__json-textarea{
+  margin: 15px 10px 15px 25px;
+  height: 170px;
+}
+
+.user-form__md-textarea{
+  margin: 15px 10px 15px 25px; 
+}
+
+.user-form__button {
+  margin: 25px 25px;
+}
+
+.textarea_size_big{
+  width: 95%;
+  max-width: 774px;
+  height: 280px;
+}
+
+.mdtext-prewiev{
+  width: 900px;
+  margin: 40px auto auto;
+  text-align: justify;
+}

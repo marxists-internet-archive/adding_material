@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Добавление материала в русский раздел сайта marxists.org</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.min.js"></script>
+
+
+</head>
+<body>
+
+<form class="user-form" action="add_material.php" method ="POST">
+  <div class="user-form__description-wrap text_size_big">
+    Основная информация о материале:  
+  </div>
+  <div class="meta-information-wrap user-form__meta-information-wrap ">
+    <div class="metainformation-wrap__item">
+      <input class="user-form__input input entered-text" type="text" name="title-article" placeholder="Полное название статьи" required>
+      <input class="user-form__input input entered-text" type="text" name="author-article" placeholder="Фамилия Имя Отчество автора" required>
+      <input class="user-form__input input entered-text" type="text" name="origin-article" placeholder="Ссылка на источник" required>
+    </div>
+    <div class="meta-information-wrap__item">
+      <textarea class="user-form__json-textarea textarea entered-text" name="json-optional">
+"optional": {}</textarea>
+    </div>
+  </div>  
+  
+  <div class="user-form__description-wrap text_size_big">
+    Содержимое материала:
+  </div>
+  <div class="user-form__content-wrap">
+    <textarea required class="user-form__md-textarea textarea entered-text textarea_size_big text_size_small" name="md-content"></textarea>
+  </div>
+  
+  <button class="user-form__button button entered-text text_bold">Отправить материал</button>
+  <button type="button" onClick="doPrewiev();" class="user-form__button button entered-text text_bold">Посмотреть</button>
+  </form>
+  <div class="mdtext-prewiev"></div>
+  
+  <script>
+ 
+  var md = window.markdownit({
+    html:         true,
+    breaks:       true,
+    linkify:      true
+}).use(window.markdownitFootnote);
+  
+  
+  var elMDtextPrewiev = document.querySelector('.mdtext-prewiev');
+  
+  function doPrewiev(){
+    var source = document.querySelector('.user-form__md-textarea').value;
+
+    elMDtextPrewiev.innerHTML = md.render(source);
+  }
+  </script>
+</body>
+</html>
