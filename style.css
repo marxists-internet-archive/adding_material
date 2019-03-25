@@ -91,8 +91,60 @@ html, body {
   height: 280px;
 }
 
+/*
+
+
+*/
+
 .mdtext-prewiev{
-  width: 900px;
+  width: 1000px;
+  color: #444;
+  font-size: 18px;
   margin: 40px auto auto;
   text-align: justify;
+  font-family: "Hoefler Text", "Century Schoolbook", "Times New Roman", serif;
+}
+
+.mdtext-prewiev__breadcrumbs{
+  
+}
+
+.mdtext-prewiev__breadcrumbs a{
+  color: #444;
+}
+
+.mdtext-prewiev__title{
+  color: brown;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.mdtext-prewiev__author{
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8em;
+  margin: 20px auto;
+}
+
+.mdtext-prewiev__origin{
+  width: 90%;
+  margin: 15px;
+}
+
+.mdtext-prewiev__origin-description{
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+ul, ol {
+  margin-left: 25px;
+}
+
+li {
+  margin-top: 10px;
 }

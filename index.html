@@ -37,7 +37,27 @@
   <button class="user-form__button button entered-text text_bold">Отправить материал</button>
   <button type="button" onClick="doPrewiev();" class="user-form__button button entered-text text_bold">Посмотреть</button>
   </form>
-  <div class="mdtext-prewiev"></div>
+  <div class="mdtext-prewiev">
+    <div class = "mdtext-prewiev__header">
+      
+      <div class = "mdtext-prewiev__breadcrumbs">
+        <a href="#">МИА</a>&nbsp;&nbsp;&gt;&nbsp;<a href="#">Русский раздел</a>&nbsp;&nbsp;&gt;&nbsp;  <a href="#">Архив</a>&nbsp;&nbsp;&gt;&nbsp; <a href="#">Макаренко</a>
+      </div>
+      
+    
+      <h1 class="mdtext-prewiev__title"></h1>
+      <div class="mdtext-prewiev__author"></div>
+    </div>
+    <div class = "mdtext-prewiev__body">
+      <hr>
+        <div class="mdtext-prewiev__origin"> <span class="mdtext-prewiev__origin-description">Источник: </span> <span class="mdtext-prewiev__origin-content"> </span> </div>
+<!-- Место для источника и прочей информации -->
+      <hr>
+      <div class="mdtext-prewiev__text">
+      
+      </div>
+    </div>
+  </div>
   
   <script>
  
@@ -48,12 +68,23 @@
 }).use(window.markdownitFootnote);
   
   
-  var elMDtextPrewiev = document.querySelector('.mdtext-prewiev');
+  var elMDtextPrewievHead = document.querySelector('.mdtext-prewiev__header');
+  var elMDtextPrewievTitle = document.querySelector('.mdtext-prewiev__title');
+  var elMDtextPrewievAuthor = document.querySelector('.mdtext-prewiev__author');
+  var elMDtextPrewievOgigin = document.querySelector('.mdtext-prewiev__origin-content');
+  var elMDtextPrewievBody = document.querySelector('.mdtext-prewiev__text');
   
   function doPrewiev(){
+  
     var source = document.querySelector('.user-form__md-textarea').value;
-
-    elMDtextPrewiev.innerHTML = md.render(source);
+    var title =  document.getElementsByName('title-article')[0].value;
+    var author =  document.getElementsByName('author-article')[0].value;
+    var origin =  document.getElementsByName('origin-article')[0].value;
+    
+    elMDtextPrewievBody.innerHTML = md.render(source);
+    elMDtextPrewievTitle.textContent = title;
+    elMDtextPrewievOgigin.textContent = origin; 
+    elMDtextPrewievAuthor.textContent =  author;
   }
   </script>
 </body>
