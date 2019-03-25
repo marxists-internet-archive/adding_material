@@ -4,6 +4,7 @@
 <title>Добавление материала в русский раздел сайта marxists.org</title>
 <link rel="stylesheet" href="style.css">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.min.js"></script>
 
@@ -49,10 +50,10 @@
       <div class="mdtext-prewiev__author"></div>
     </div>
     <div class = "mdtext-prewiev__body">
-      <hr>
+  <!--    <hr> -->
         <div class="mdtext-prewiev__origin"> <span class="mdtext-prewiev__origin-description">Источник: </span> <span class="mdtext-prewiev__origin-content"> </span> </div>
-<!-- Место для источника и прочей информации -->
-      <hr>
+<!-- Место для источника и прочей информации 
+      <hr>-->
       <div class="mdtext-prewiev__text">
       
       </div>
@@ -64,7 +65,8 @@
   var md = window.markdownit({
     html:         true,
     breaks:       true,
-    linkify:      true
+    linkify:      true,
+    typographer:  true
 }).use(window.markdownitFootnote);
   
   
